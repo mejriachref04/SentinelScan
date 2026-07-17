@@ -57,7 +57,6 @@ This tool is intended for authorized security testing only — your own applicat
 - Mejri Achref
 - Dhimi Ayoub
 
-Academic supervisor: Taher Jellali · Professional supervisor: Tasnim Nouioui
 =======
 # SentinelScan
 Automated web vulnerability scanner — PFE project (Flask + React)
