@@ -1,0 +1,13 @@
+flask
+flask-cors
+flask-sqlalchemy
+flask-jwt-extended
+flask-socketio
+flask-limiter
+python-socketio
+eventlet
+python-dotenv
+bcrypt
+reportlab
+beautifulsoup4
+requests
