@@ -23,8 +23,6 @@ Automated web vulnerability scanner based on the OWASP Top 10 — built as a Fin
 **Backend:** Flask, SQLAlchemy, Flask-SocketIO, Flask-JWT-Extended, bcrypt, ReportLab, BeautifulSoup4
 **Frontend:** React, Socket.IO client, Axios, Tailwind CSS
 
-## Screenshots
-(add 2-3 images here — see instructions below)
 
 ## Setup
 
