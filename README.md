@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SentinelScan 🛡️
 
 Automated web vulnerability scanner based on the OWASP Top 10 — built as a Final Year Project (PFE) at the Faculty of Sciences and Techniques of Sidi Bouzid, University of Kairouan.
@@ -22,6 +23,8 @@ Automated web vulnerability scanner based on the OWASP Top 10 — built as a Fin
 **Backend:** Flask, SQLAlchemy, Flask-SocketIO, Flask-JWT-Extended, bcrypt, ReportLab, BeautifulSoup4
 **Frontend:** React, Socket.IO client, Axios, Tailwind CSS
 
+## Screenshots
+(add 2-3 images here — see instructions below)
 
 ## Setup
 
@@ -56,3 +59,4 @@ Academic supervisor: Taher Jellali · Professional supervisor: Tasnim Nouioui
 =======
 # SentinelScan
 Automated web vulnerability scanner — PFE project (Flask + React)
+>>>>>>> 88b57b3d8f6f424d4fc6cef3370efe7ba286e068
