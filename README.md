@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SentinelScan 🛡️
 
 Automated web vulnerability scanner based on the OWASP Top 10 — built as a Final Year Project (PFE) at the Faculty of Sciences and Techniques of Sidi Bouzid, University of Kairouan.
@@ -27,7 +26,6 @@ Automated web vulnerability scanner based on the OWASP Top 10 — built as a Fin
 ## Setup
 
 ### Backend
-\`\`\`bash
 cd backend
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
@@ -35,15 +33,12 @@ pip install -r requirements.txt
 cp .env.example .env
 # edit .env with your own secret values
 python app.py
-\`\`\`
 Runs on http://localhost:5000
 
 ### Frontend
-\`\`\`bash
 cd frontend
 npm install
 npm start
-\`\`\`
 Runs on http://localhost:3000
 
 ## ⚠️ Legal & Ethical Notice
@@ -57,4 +52,3 @@ Academic supervisor: Taher Jellali · Professional supervisor: Tasnim Nouioui
 =======
 # SentinelScan
 Automated web vulnerability scanner — PFE project (Flask + React)
->>>>>>> 88b57b3d8f6f424d4fc6cef3370efe7ba286e068
