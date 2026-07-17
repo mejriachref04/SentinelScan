@@ -27,18 +27,27 @@ Automated web vulnerability scanner based on the OWASP Top 10 — built as a Fin
 
 ### Backend
 cd backend
+
 python -m venv venv
+
 source venv/bin/activate  # Windows: venv\Scripts\activate
+
 pip install -r requirements.txt
+
 cp .env.example .env
+
 # edit .env with your own secret values
 python app.py
+
 Runs on http://localhost:5000
 
 ### Frontend
 cd frontend
+
 npm install
+
 npm start
+
 Runs on http://localhost:3000
 
 ## ⚠️ Legal & Ethical Notice
