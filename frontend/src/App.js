@@ -1,50 +1,51 @@
-import React, { useState, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css';
-import Navbar    from './components/Navbar';
-import Login     from './pages/Login';
-import Register  from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import History   from './pages/History';
-import AdminUsers from './pages/AdminUsers';
-import Schedule  from './pages/Schedule';
-import { WebSocketProvider } from './context/WebSocketContext';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import CartDrawer from './components/CartDrawer';
+
+import Home from './pages/Home';
+import Menu from './pages/Menu';
+import About from './pages/About';
+import Catering from './pages/Catering';
+import PrivateEvents from './pages/PrivateEvents';
+import Gallery from './pages/Gallery';
+import Reservations from './pages/Reservations';
+import OrderOnline from './pages/OrderOnline';
+import Contact from './pages/Contact';
+import Cart from './pages/Cart';
+import ReservationSuccess from './pages/ReservationSuccess';
+import CateringSuccess from './pages/CateringSuccess';
+import NotFound from './pages/NotFound';
 
 export default function App() {
-  const [user, setUser] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('user') || 'null'); }
-    catch { return null; }
-  });
-
-  const handleLogin = useCallback((userData) => {
-    setUser(userData);
-  }, []);
-
-  const handleLogout = useCallback(() => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    setUser(null);
-  }, []);
-
   return (
     <Router>
-      <WebSocketProvider user={user}>
-        <div style={{ minHeight:'100vh', background:'var(--bg)', color:'var(--text)' }}>
-          <Navbar user={user} onLogout={handleLogout} />
-          <main style={{ maxWidth:'1040px', margin:'0 auto', padding:'32px 24px' }}>
+      <CartProvider>
+        <div className="min-h-screen bg-[#0D0D0D] text-[#ECE6DA] flex flex-col font-sans selection:bg-[#5C1D24] selection:text-[#FAF7F2]">
+          <Header />
+          <CartDrawer />
+          <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
             <Routes>
-              <Route path="/login"       element={!user ? <Login onLogin={handleLogin} />    : <Navigate to="/" />} />
-              <Route path="/register"    element={!user ? <Register /> : <Navigate to="/" />} />
-              <Route path="/"            element={user  ? <Dashboard /> : <Navigate to="/login" />} />
-              <Route path="/dashboard"   element={user  ? <Dashboard /> : <Navigate to="/login" />} />
-              <Route path="/history"     element={user  ? <History />   : <Navigate to="/login" />} />
-              <Route path="/schedule"    element={user  ? <Schedule />  : <Navigate to="/login" />} />
-              <Route path="/admin/users" element={user && user.role === 'admin' ? <AdminUsers /> : <Navigate to="/" />} />
-              <Route path="*"            element={<Navigate to="/" />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/catering" element={<Catering />} />
+              <Route path="/private-events" element={<PrivateEvents />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/reservations" element={<Reservations />} />
+              <Route path="/order-online" element={<OrderOnline />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/reservation-success" element={<ReservationSuccess />} />
+              <Route path="/catering-success" element={<CateringSuccess />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          <Footer />
         </div>
-      </WebSocketProvider>
+      </CartProvider>
     </Router>
   );
 }
